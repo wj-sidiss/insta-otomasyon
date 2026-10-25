@@ -1,0 +1,235 @@
+{
+ "batchcomplete": true,
+ "continue": {
+  "gsroffset": 6,
+  "continue": "gsroffset||"
+ },
+ "query": {
+  "pages": [
+   {
+    "pageid": 54888329,
+    "ns": 6,
+    "title": "File:Sunflower field - panoramio (11).jpg",
+    "index": 2,
+    "imagerepository": "local",
+    "imageinfo": [
+     {
+      "size": 7148141,
+      "width": 5184,
+      "height": 3456,
+      "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Sunflower_field_-_panoramio_%2811%29.jpg/1280px-Sunflower_field_-_panoramio_%2811%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "thumbwidth": 1280,
+      "thumbheight": 853,
+      "responsiveUrls": {
+       "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Sunflower_field_-_panoramio_%2811%29.jpg/3840px-Sunflower_field_-_panoramio_%2811%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+      },
+      "thumbattribs": {
+       "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Sunflower_field_-_panoramio_%2811%29.jpg/1280px-Sunflower_field_-_panoramio_%2811%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+       "decoding": "async",
+       "loading": "lazy",
+       "width": 1280,
+       "height": 853,
+       "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Sunflower_field_-_panoramio_%2811%29.jpg/3840px-Sunflower_field_-_panoramio_%2811%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+      },
+      "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Sunflower_field_-_panoramio_%2811%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Sunflower_field_-_panoramio_(11).jpg",
+      "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=54888329",
+      "extmetadata": {
+       "ObjectName": {
+        "value": "Sunflower field - panoramio (11)",
+        "source": "mediawiki-metadata"
+       },
+       "Categories": {
+        "value": "Panoramio files uploaded by Panoramio upload bot|Panoramio images reviewed by trusted users|Photos from Panoramio|Media needing category review as of 9 January 2017|Files with coordinates missing SDC location of creation|France photographs taken on 2012-07-21|Sunflower fields|Photographs by Björn Sothmann|Photos from Panoramio ID 6004592",
+        "source": "commons-categories",
+        "hidden": ""
+       },
+       "ImageDescription": {
+        "value": "Sunflower field",
+        "source": "commons-desc-page"
+       },
+       "Artist": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20161026214837/http://www.panoramio.com/user/6004592?with_photo_id=75754476\">Björn S.</a>",
+        "source": "commons-desc-page"
+       },
+       "LicenseShortName": {
+        "value": "CC BY-SA 3.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+       }
+      },
+      "mime": "image/jpeg"
+     }
+    ]
+   },
+   {
+    "pageid": 56834086,
+    "ns": 6,
+    "title": "File:Sunflower field Milky Way.jpg",
+    "index": 1,
+    "imagerepository": "local",
+    "imageinfo": [
+     {
+      "size": 20529479,
+      "width": 3944,
+      "height": 5908,
+      "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Sunflower_field_Milky_Way.jpg/1280px-Sunflower_field_Milky_Way.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "thumbwidth": 1280,
+      "thumbheight": 1917,
+      "responsiveUrls": {
+       "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Sunflower_field_Milky_Way.jpg/3840px-Sunflower_field_Milky_Way.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+      },
+      "thumbattribs": {
+       "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Sunflower_field_Milky_Way.jpg/1280px-Sunflower_field_Milky_Way.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+       "decoding": "async",
+       "loading": "lazy",
+       "width": 1280,
+       "height": 1917,
+       "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Sunflower_field_Milky_Way.jpg/3840px-Sunflower_field_Milky_Way.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+      },
+      "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Sunflower_field_Milky_Way.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Sunflower_field_Milky_Way.jpg",
+      "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=56834086",
+      "extmetadata": {
+       "ObjectName": {
+        "value": "Sunflower field Milky Way",
+        "source": "mediawiki-metadata"
+       },
+       "Categories": {
+        "value": "Taken with Nikon D750|Columbia County, New York|Self-published work|Images by Juliancolton|Sunflower fields in the United States|Milky Way Galaxy over New York (state)|Taken with Samyang 14mm F2.8 IF ED UMC Aspherical|Fields at night|Flowers at night",
+        "source": "commons-categories",
+        "hidden": ""
+       },
+       "ImageDescription": {
+        "value": "A field of sunflowers (<i><a href=\"//commons.wikimedia.org/wiki/Helianthus_annuus\" title=\"Helianthus annuus\">Helianthus annuus</a></i>) at night in <a href=\"https://en.wikipedia.org/wiki/Columbia_County,_New_York\" class=\"extiw\" title=\"w:Columbia County, New York\">Columbia County, New York</a>, with the core of the Milky Way visible.",
+        "source": "commons-desc-page"
+       },
+       "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/wiki/User:Juliancolton\" title=\"User:Juliancolton\">Juliancolton</a>",
+        "source": "commons-desc-page"
+       },
+       "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+       }
+      },
+      "mime": "image/jpeg"
+     }
+    ]
+   },
+   {
+    "pageid": 58479984,
+    "ns": 6,
+    "title": "File:Sunflower field tnau.jpg",
+    "index": 4,
+    "imagerepository": "local",
+    "imageinfo": [
+     {
+      "size": 5357657,
+      "width": 4096,
+      "height": 2304,
+      "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Sunflower_field_tnau.jpg/1280px-Sunflower_field_tnau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "thumbwidth": 1280,
+      "thumbheight": 720,
+      "responsiveUrls": {
+       "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Sunflower_field_tnau.jpg/3840px-Sunflower_field_tnau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+      },
+      "thumbattribs": {
+       "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Sunflower_field_tnau.jpg/1280px-Sunflower_field_tnau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+       "decoding": "async",
+       "loading": "lazy",
+       "width": 1280,
+       "height": 720,
+       "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Sunflower_field_tnau.jpg/3840px-Sunflower_field_tnau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+      },
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Sunflower_field_tnau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Sunflower_field_tnau.jpg",
+      "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=58479984",
+      "extmetadata": {
+       "ObjectName": {
+        "value": "Sunflower field tnau",
+        "source": "mediawiki-metadata"
+       },
+       "Categories": {
+        "value": "Self-published work|Sunflower fields",
+        "source": "commons-categories",
+        "hidden": ""
+       },
+       "ImageDescription": {
+        "value": "Yellow blossom of sunflower in hot sun...",
+        "source": "commons-desc-page"
+       },
+       "Artist": {
+        "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Aneesfathima.agri&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Aneesfathima.agri (page does not exist)\">Aneesfathima.agri</a>",
+        "source": "commons-desc-page"
+       },
+       "LicenseShortName": {
+        "value": "CC BY-SA 4.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+       }
+      },
+      "mime": "image/jpeg"
+     }
+    ]
+   },
+   {
+    "pageid": 74394041,
+    "ns": 6,
+    "title": "File:Sunflower Field (7848177492).jpg",
+    "index": 6,
+    "imagerepository": "local",
+    "imageinfo": [
+     {
+      "size": 3647895,
+      "width": 2160,
+      "height": 1620,
+      "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Sunflower_Field_%287848177492%29.jpg/1280px-Sunflower_Field_%287848177492%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "thumbwidth": 1280,
+      "thumbheight": 960,
+      "responsiveUrls": {
+       "2": "https://upload.wikimedia.org/wikipedia/commons/d/db/Sunflower_Field_%287848177492%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+      },
+      "thumbattribs": {
+       "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Sunflower_Field_%287848177492%29.jpg/1280px-Sunflower_Field_%287848177492%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+       "decoding": "async",
+       "loading": "lazy",
+       "width": 1280,
+       "height": 960,
+       "srcset": "https://upload.wikimedia.org/wikipedia/commons/d/db/Sunflower_Field_%287848177492%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+      },
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Sunflower_Field_%287848177492%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Sunflower_Field_(7848177492).jpg",
+      "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=74394041",
+      "extmetadata": {
+       "ObjectName": {
+        "value": "Sunflower Field (7848177492)",
+        "source": "mediawiki-metadata"
+       },
+       "Categories": {
+        "value": "Photos by audreyjm529|Flickr images reviewed by FlickreviewR 2|Sunflower fields|Flickr files uploaded by User:LittleWink",
+        "source": "commons-categories",
+        "hidden": ""
+       },
+       "ImageDescription": {
+        "value": "Mifflinburg,PA.",
+        "source": "commons-desc-page"
+       },
+       "Artist": {
+        "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/98799884@N00\">Audrey</a> from Central Pennsylvania, USA",
+        "source": "commons-desc-page"
+       },
+       "LicenseShortName": {
+        "value": "CC BY 2.0",
+        "source": "commons-desc-page",
+        "hidden": ""
+       }
+      },
+      "mime": "image/jpeg"
+     }
+    ]
+   }
+  ]
+ }
+}

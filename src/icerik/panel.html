@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>İçerik Stüdyosu</title>
+<link rel="stylesheet" href="/panel.css">
+</head>
+<body>
+<div class="kap">
+  <header>
+    <h1>İçerik <span>Stüdyosu</span></h1>
+    <div id="motorHap" class="hap">Yazı motoru denetleniyor…</div>
+  </header>
+
+  <div class="izgara">
+    <div class="sol-sutun">
+      <div class="kart">
+        <h2>Yeni içerik</h2>
+        <label for="konu">Konu</label>
+        <textarea id="konu" maxlength="300" placeholder="Örn: Yapay zeka ile tekrar eden işleri otomatikleştirmenin 3 yolu"></textarea>
+        <div class="sira">
+          <div><label for="dil">Dil</label><select id="dil"><option value="tr">Türkçe</option><option value="en">English</option></select></div>
+          <div><label for="ton">Ton</label><select id="ton"><option value="samimi">Samimi</option><option value="uzman">Uzman</option><option value="enerjik">Enerjik</option><option value="ciddi">Ciddi</option></select></div>
+        </div>
+        <label for="motor">Yazı motoru</label>
+        <select id="motor"></select>
+        <button class="ana" id="uret">Paketi üret</button>
+        <div id="hata" class="hata hidden"></div>
+      </div>
+
+      <div class="kart hidden" id="ilerleKart">
+        <h2>İlerleme</h2>
+        <div class="adimlar" id="adimlar"></div>
+      </div>
+
+      <div class="kart">
+        <h2>Instagram</h2>
+        <div class="ig"><span>Bağlı değil. Paketi kopyalayıp kendiniz paylaşın.</span><button class="kucuk" disabled title="Sonraki aşamada eklenecek">Bağlan (yakında)</button></div>
+      </div>
+
+      <details class="kart acilir" id="siteKart">
+        <summary>Videoyu üret · ücretsiz başlangıç</summary>
+        <div id="siteler"><div class="not">Yükleniyor…</div></div>
+      </details>
+
+      <details class="kart acilir" id="anahtarKart">
+        <summary>API anahtarları</summary>
+        <div id="anahtarlar"><div class="not">Yükleniyor…</div></div>
+      </details>
+
+      <div class="kart">
+        <h2>Geçmiş</h2>
+        <div class="gecmis" id="gecmis"></div>
+      </div>
+    </div>
+
+    <div class="kart" id="sonucKart">
+      <div class="bos" id="bos">Bir konu yazıp "Paketi üret"e basın.<br>Başlık, caption, hashtag, SEO, analiz, senaryo ve kapak burada görünecek.</div>
+      <div id="sonuc" class="hidden"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/panel.js" defer></script>
+</body>
+</html>

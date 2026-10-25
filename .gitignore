@@ -1,0 +1,44 @@
+# --- SIRLAR: asla depoya girmez ---
+config/.env
+config/ayarlar.yaml
+config/anahtarlar.json
+config/*.tmp
+*.token
+*.pem
+
+# --- Veritabani ve kuyruk ---
+*.db
+*.db-wal
+*.db-shm
+
+# --- Kullanici medyasi ve loglar ---
+gelen/reels/*
+gelen/story/*
+yayinlandi/*
+hata/*
+!**/.gitkeep
+*.log
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+
+# --- Isletim sistemi / editor ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# --- Uretilen icerik paketleri ---
+paketler/
+kartlar/seri-*/
+kartlar/*.jpg
+
+# --- Kisisel kart denemeleri (urunun parcasi degil; kapak uretimi src/icerik/kapak.py'dedir) ---
+kartlar/

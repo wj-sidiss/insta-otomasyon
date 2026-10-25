@@ -1,0 +1,35 @@
+# Instagram Reels / Story otomasyonu - Python bagimliliklari
+# Kurulum:  python -m pip install -r requirements.txt
+# Python 3.12+ gerekir (StrEnum, tomllib, tip sozdizimi).
+
+# --- Klasor izleme: gelen/reels ve gelen/story klasorlerini dinler ---
+watchdog==6.0.0
+
+# --- HTTP istemcisi: graph.facebook.com ve rupload.facebook.com cagrilari ---
+# httpx secildi cunku ayri ayri connect/read/write zaman asimi verilebiliyor;
+# buyuk video yuklemelerinde bu sart.
+httpx==0.28.1
+
+# --- Zamanlayici: yayin slotlari ve dakikalik kuyruk taramasi ---
+APScheduler==3.11.0
+
+# --- Ayarlar: config/.env dosyasindan token okuma, dogrulama ---
+pydantic-settings==2.10.1
+pydantic>=2.9,<3
+
+# --- config/ayarlar.yaml ayristirma ---
+PyYAML==6.0.2
+
+# --- Gorsel dogrulama / JPEG cevrimi (sadece JPEG kabul ediliyor) ---
+Pillow==12.3.0
+
+# --- Windows'ta zoneinfo veri tabani yok; Europe/Istanbul icin gerekli ---
+tzdata==2026.3
+
+# --- Gelistirme / test (uretimde gerekmez) ---
+pytest==8.3.4
+
+# --- Icerik Studyosu ---
+fastapi>=0.115
+uvicorn>=0.30
+playwright>=1.45

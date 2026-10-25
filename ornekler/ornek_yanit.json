@@ -1,0 +1,50 @@
+{
+  "basliklar": [
+    "Yapay zekayla tekrar eden işleri bitirmenin 3 yolu",
+    "Her gün elle yaptığın 3 iş, yapay zekaya devredilebilir",
+    "Zaman kaybettiren işleri yapay zekaya yaptır"
+  ],
+  "kapak": {
+    "ust_metin": "YAPAY ZEKA",
+    "baslik": "Tekrar eden işleri otomatiğe bağla",
+    "alt_metin": "Bugün başlayabileceğin 3 yol"
+  },
+  "caption": "Bunu hâlâ elle mi yapıyorsun?\n\nHer gün aynı mailleri, aynı raporları, aynı kopyala-yapıştırı tekrarlıyorsan yapay zeka tam bu iş için var.\n\n1) Mail ve mesaj taslakları: tekrar eden cevapları şablona çevir, yapay zekaya kişiselleştirt.\n2) Veri toplama ve özet: uzun metinleri ve tabloları saniyeler içinde özetlet.\n3) Küçük otomasyonlar: bir olay olunca bir iş kendiliğinden başlasın.\n\nÖnemli olan hepsini birden kurmak değil, bu hafta tek bir işi seçip devretmek.\n\nSen hangi işi ilk devredersin?",
+  "hashtagler": [
+    {"etiket": "#yapayzeka", "gerekce": "Ana konu, en geniş ilgili etiket"},
+    {"etiket": "#otomasyon", "gerekce": "İçeriğin ikinci ana ekseni"},
+    {"etiket": "#yapayzekaaraçları", "gerekce": "Araç arayan izleyiciyi hedefler"},
+    {"etiket": "#verimlilik", "gerekce": "Zaman kazanma vaadinin doğal etiketi"},
+    {"etiket": "#dijitalçalışma", "gerekce": "İş akışı odaklı kitle"},
+    {"etiket": "#iş akışı", "gerekce": "Otomasyon kurgusuna doğrudan bağlı"},
+    {"etiket": "#girişimci", "gerekce": "Hedef kitle: küçük işletme sahipleri"},
+    {"etiket": "#yapayzekaileişyapma", "gerekce": "Nasıl yapılır aramalarına yakın"}
+  ],
+  "seo": {
+    "anahtar_kelimeler": [
+      "yapay zeka ile otomasyon",
+      "tekrar eden işleri otomatikleştirme",
+      "yapay zeka ile zaman kazanma",
+      "iş akışı otomasyonu",
+      "mail taslağı yapay zeka",
+      "yapay zeka ile özet çıkarma"
+    ],
+    "alt_metin": "Koyu zeminde 'Tekrar eden işleri otomatiğe bağla' başlıklı kapak"
+  },
+  "analiz": {
+    "aci": "Soyut 'yapay zeka çağı' anlatısı yerine, izleyicinin bugün elle yaptığı üç somut işe odaklanan pratik liste.",
+    "hedef_kitle": "Küçük işletme sahipleri, serbest çalışanlar ve kendi işini kuran girişimciler.",
+    "hook": "Bunu hâlâ elle mi yapıyorsun?",
+    "neden_isler": "Soruyla açılış izleyiciyi kendi günlük işine bağlar; üç maddelik yapı kısa videoda takip etmeyi kolaylaştırır; kapanıştaki soru yorum bırakmayı teşvik eder.",
+    "riskler": "Hangi aracın kullanılacağını söylemeden genel kalırsa 'yine bir genel video' hissi verebilir. İkinci videoda tek bir aracı gösteren uygulamalı örnek eklenmeli.",
+    "trend_ozeti": "Arama önerilerinde 'ile', 'nasıl' ve 'ücretsiz' kalıpları öne çıkıyor: izleyici hazır çözüm ve somut yöntem arıyor."
+  },
+  "senaryo": [
+    {"sure_sn": 3, "anlatim": "Bunu hâlâ elle mi yapıyorsun?", "ekran_yazisi": "Hâlâ elle mi?"},
+    {"sure_sn": 8, "anlatim": "Her gün aynı mailleri ve raporları tekrarlıyorsan, o işin büyük kısmı yapay zekaya devredilebilir.", "ekran_yazisi": "Aynı iş. Her gün."},
+    {"sure_sn": 9, "anlatim": "Bir: tekrar eden cevapları şablona çevir, yapay zekaya kişiselleştirt.", "ekran_yazisi": "1 · Mail ve mesaj taslakları"},
+    {"sure_sn": 9, "anlatim": "İki: uzun metinleri ve tabloları saniyeler içinde özetlet.", "ekran_yazisi": "2 · Veri ve özet"},
+    {"sure_sn": 9, "anlatim": "Üç: bir olay olunca bir iş kendiliğinden başlasın diye küçük otomasyonlar kur.", "ekran_yazisi": "3 · Küçük otomasyonlar"},
+    {"sure_sn": 6, "anlatim": "Hepsini birden kurma. Bu hafta tek bir işi seç ve devret. Sen hangisini seçersin?", "ekran_yazisi": "Hangisini devredersin?"}
+  ]
+}

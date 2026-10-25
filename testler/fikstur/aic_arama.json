@@ -1,0 +1,85 @@
+{
+ "preference": null,
+ "data": [
+  {
+   "_score": 52.96951,
+   "id": 20029,
+   "title": "Sunflowers, Marché St Germain, Paris",
+   "thumbnail": {
+    "lqip": "data:image/gif;base64,R0lGODlhBgAFAPQAAJycjKWkk6Wllqinl66tnq+vn7GvoLKwoLKypbe3qru4qbu6qL26q728rb+9rcC+r8C+sMLAscbDs8bEs8XEtMbGt87Mu8/MvdHNv9DOv9HPwdLQwtXTxAAAAAAAAAAAACH5BAAAAAAALAAAAAAGAAUAAAUYIFU0CVI5g2EECycAymFlEMFE0qNt2DWFADs=",
+    "width": 2784,
+    "height": 2250,
+    "alt_text": "A work made of etching with foul biting in black ink on ivory japanese paper."
+   },
+   "date_display": "1888/93",
+   "artist_display": "James McNeill Whistler\nAmerican, 1834-1903",
+   "is_public_domain": true,
+   "image_id": "2e9476db-2d28-c197-25d8-9b525d63d5a0",
+   "subject_titles": [],
+   "style_title": null
+  },
+  {
+   "_score": 52.701527,
+   "id": 35720,
+   "title": "Sunflowers",
+   "thumbnail": {
+    "lqip": "data:image/gif;base64,R0lGODlhBAAFAPQAAFQ+K09EKVxKNGBRL2ZbPWhZSHZoRX9yT39vV35xWYRwSoJ0U4ByVop6WpN/WZGBYJ2ObaqWcreigLikggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAEAAUAAAURYPRMkhEozkEMzSIADIQUSQgAOw==",
+    "width": 2314,
+    "height": 3000,
+    "alt_text": "A work made of watercolor, with pen and ink, on paper."
+   },
+   "date_display": "August 20, 1895",
+   "artist_display": "Georges Lemmen\nBelgian, 1865-1916",
+   "is_public_domain": true,
+   "image_id": "461c0069-45a9-c67e-7210-bfb512c3ea58",
+   "subject_titles": [],
+   "style_title": null
+  },
+  {
+   "_score": 52.565872,
+   "id": 112885,
+   "title": "Decorative Study: Woman with Sunflowers",
+   "thumbnail": {
+    "lqip": "data:image/gif;base64,R0lGODlhAwAFAPMAAGNgVmRgVGllWWpnXG5qX3NwZnp3a3t4bH57b5GOgJKOgJOQhaGYg6qnmrezpAAAACH5BAAAAAAALAAAAAADAAUAAAQLEBCGikhruHaUCREAOw==",
+    "width": 1499,
+    "height": 2250,
+    "alt_text": "A work made of pen and black ink, with brush and black wash, over traces of graphite, on ivory wove paper."
+   },
+   "date_display": "1892/98",
+   "artist_display": "Attributed to Aubrey Vincent Beardsley\nEnglish, 1872-1898",
+   "is_public_domain": true,
+   "image_id": "0baef26e-7f4c-e4b2-ec72-04ac85448af7",
+   "subject_titles": [],
+   "style_title": null
+  },
+  {
+   "_score": 48.92118,
+   "id": 186048,
+   "title": "Clytie",
+   "thumbnail": {
+    "lqip": "data:image/gif;base64,R0lGODlhAwAFAPMAAG1TO2peVXdxa350bIlwVZh/Y4F+fo6AdJGDd5SSj5aVl56Yk6WVhKekoqyopQAAACH5BAAAAAAALAAAAAADAAUAAAQLMLG2ijsEDSBMUBEAOw==",
+    "width": 1489,
+    "height": 2250,
+    "alt_text": "A work made of plaster."
+   },
+   "date_display": "1868",
+   "artist_display": "George Frederick Watts (English, 1817–1904)",
+   "is_public_domain": true,
+   "style_title": "19th century",
+   "subject_titles": [
+    "Greek mythology",
+    "sunflowers",
+    "mythology",
+    "mythological figures",
+    "head",
+    "busts",
+    "woman"
+   ],
+   "image_id": "49fe111f-39ed-1ff1-525b-91c6bc0e67d1"
+  }
+ ],
+ "config": {
+  "iiif_url": "https://www.artic.edu/iiif/2",
+  "website_url": "https://www.artic.edu"
+ }
+}

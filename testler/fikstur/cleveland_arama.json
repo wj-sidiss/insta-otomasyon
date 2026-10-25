@@ -1,0 +1,357 @@
+{
+ "info": {
+  "total": 5,
+  "parameters": {
+   "skip": 0,
+   "limit": 3,
+   "q": "sunflower",
+   "cc0": "1",
+   "has_image": "1",
+   "select": "accession_number,accession_number_sortable,cover_accession_number,department,collection,gallery,department,classification_type",
+   "search": "sunflower"
+  }
+ },
+ "data": [
+  {
+   "id": 135015,
+   "accession_number": "1957.66",
+   "share_license_status": "CC0",
+   "tombstone": "Sunflower Bowl, 1127–1279. China, Southern Song dynasty (1127-1279). Glazed reddish-brown porcelain, Guan ware; diameter: 17.5 cm (6 7/8 in.); overall: 7 cm (2 3/4 in.). The Cleveland Museum of Art, Gift of Mr. and Mrs. Severance A. Millikin, 1957.66",
+   "current_location": "238 Chinese Ceramics",
+   "title": "Sunflower Bowl",
+   "creation_date": "1127–1279",
+   "creation_date_earliest": 1127,
+   "creation_date_latest": 1279,
+   "artists_tags": [],
+   "culture": [
+    "China, Southern Song dynasty (1127-1279)"
+   ],
+   "technique": "glazed reddish-brown porcelain, Guan ware",
+   "support_materials": [],
+   "department": "Chinese Art",
+   "collection": "China - Song Dynasty",
+   "type": "Ceramic",
+   "dimensions": {
+    "diameter": {
+     "width": 0.175,
+     "width_inch": 6,
+     "width_inch_fraction": 0.875
+    },
+    "overall": {
+     "height": 0.07,
+     "height_inch": 2,
+     "height_inch_fraction": 0.75
+    }
+   },
+   "state_of_the_work": null,
+   "edition_of_the_work": null,
+   "copyright": null,
+   "find_spot": null,
+   "former_accession_numbers": [],
+   "did_you_know": null,
+   "early_education_description": null,
+   "artlens_description": null,
+   "external_resources": {
+    "wikidata": [
+     "https://www.wikidata.org/wiki/Q80027853"
+    ],
+    "internet_archive": [
+     "https://archive.org/details/clevelandart-1957.66-sunflower-bowl-guan",
+     "https://archive.org/details/clevelandart-1957.66-sunflower-bowl"
+    ]
+   },
+   "url": "https://clevelandart.org/art/1957.66",
+   "images": {
+    "annotation": null,
+    "web": {
+     "url": "https://openaccess-cdn.clevelandart.org/1957.66/1957.66_web.jpg",
+     "width": "1263",
+     "height": "871",
+     "filesize": "412264",
+     "filename": "1957.66_web.jpg"
+    },
+    "print": {
+     "url": "https://openaccess-cdn.clevelandart.org/1957.66/1957.66_print.jpg",
+     "width": "3400",
+     "height": "2344",
+     "filesize": "2785671",
+     "filename": "1957.66_print.jpg"
+    },
+    "full": {
+     "url": "https://openaccess-cdn.clevelandart.org/1957.66/1957.66_full.tif",
+     "width": "4589",
+     "height": "3164",
+     "filesize": "43587868",
+     "filename": "1957.66_full.tif"
+    }
+   },
+   "creditline": "Gift of Mr. and Mrs. Severance A. Millikin",
+   "image_credit": null,
+   "sketchfab_id": null,
+   "sketchfab_url": null,
+   "gallery_donor_text": null,
+   "creators": [],
+   "legal_status": "accessioned",
+   "accession_date": "1957-01-17T00:00:00",
+   "sortable_date": 1127,
+   "date_added_to_oa": null,
+   "date_text": "1127–1279",
+   "collapse_artists": false,
+   "on_loan": false,
+   "recently_acquired": false,
+   "record_type": "object",
+   "conservation_statement": null,
+   "has_conservation_images": false,
+   "cover_accession_number": null,
+   "is_nazi_era_provenance": false,
+   "impression": null,
+   "alternate_titles": [
+    "Althea Bowl: dark bodied porcelain",
+    "Sunflower Bowl:  Kuan Ware",
+    "Mallow-Petal Bowl",
+    "Sunflower Bowl: Guan ware"
+   ],
+   "is_highlight": false,
+   "updated_at": "2026-05-29 06:54:10.306000"
+  },
+  {
+   "id": 151559,
+   "accession_number": "1984.10",
+   "share_license_status": "CC0",
+   "tombstone": "Vase Decorated with Sunflowers, 1899. John D. Wareham (American, 1871–1954), Rookwood Pottery Company (American, established 1880). Earthenware; overall: 27 x 19.3 cm (10 5/8 x 7 5/8 in.). The Cleveland Museum of Art, James Parmelee Fund, 1984.10",
+   "current_location": "208 American Gilded Age and Realism",
+   "title": "Vase Decorated with Sunflowers",
+   "creation_date": "1899",
+   "creation_date_earliest": 1899,
+   "creation_date_latest": 1899,
+   "artists_tags": [
+    "male",
+    "gender unknown"
+   ],
+   "culture": [
+    "America, late 19th Century"
+   ],
+   "technique": "earthenware",
+   "support_materials": [],
+   "department": "Decorative Art and Design",
+   "collection": "Decorative Arts",
+   "type": "Ceramic",
+   "dimensions": {
+    "overall": {
+     "height": 0.27,
+     "height_inch": 10,
+     "height_inch_fraction": 0.625,
+     "width": 0.193,
+     "width_inch": 7,
+     "width_inch_fraction": 0.625
+    }
+   },
+   "state_of_the_work": null,
+   "edition_of_the_work": null,
+   "copyright": null,
+   "find_spot": null,
+   "former_accession_numbers": [],
+   "did_you_know": null,
+   "early_education_description": null,
+   "artlens_description": null,
+   "external_resources": {
+    "wikidata": [
+     "https://www.wikidata.org/wiki/Q60781062"
+    ],
+    "internet_archive": [
+     "https://archive.org/details/clevelandart-1984.10-vase-decorated-with"
+    ]
+   },
+   "url": "https://clevelandart.org/art/1984.10",
+   "images": {
+    "annotation": null,
+    "web": {
+     "url": "https://openaccess-cdn.clevelandart.org/1984.10/1984.10_web.jpg",
+     "width": "767",
+     "height": "893",
+     "filesize": "294775",
+     "filename": "1984.10_web.jpg"
+    },
+    "print": {
+     "url": "https://openaccess-cdn.clevelandart.org/1984.10/1984.10_print.jpg",
+     "width": "2922",
+     "height": "3400",
+     "filesize": "4548088",
+     "filename": "1984.10_print.jpg"
+    },
+    "full": {
+     "url": "https://openaccess-cdn.clevelandart.org/1984.10/1984.10_full.tif",
+     "width": "4276",
+     "height": "4975",
+     "filesize": "63858936",
+     "filename": "1984.10_full.tif"
+    }
+   },
+   "creditline": "James Parmelee Fund",
+   "image_credit": null,
+   "sketchfab_id": null,
+   "sketchfab_url": null,
+   "gallery_donor_text": "The Cleveland Foundation Gallery",
+   "creators": [
+    {
+     "id": 19834,
+     "description": "John D. Wareham (American, 1871–1954)",
+     "extent": null,
+     "qualifier": null,
+     "role": "decorated by",
+     "biography": null,
+     "name_in_original_language": null,
+     "birth_year": "1871",
+     "death_year": "1954",
+     "use_in_caption": true,
+     "include_extent": false,
+     "weight": 1
+    },
+    {
+     "id": 19542,
+     "description": "Rookwood Pottery Company (American, established 1880)",
+     "extent": null,
+     "qualifier": null,
+     "role": "made at",
+     "biography": "one of the most important factories for art pottery in the USA, founded in Cincinnati in 1880 by Mrs. Maria Nichols (later Mrs. Storer) with financial support from her father, Joseph Longworth, a rich patron of the arts. Named after their family home.",
+     "name_in_original_language": null,
+     "birth_year": "1880",
+     "use_in_caption": true,
+     "include_extent": false,
+     "weight": 2
+    }
+   ],
+   "legal_status": "accessioned",
+   "accession_date": "1984-03-26T00:00:00",
+   "sortable_date": 1899,
+   "date_added_to_oa": null,
+   "date_text": "1899",
+   "collapse_artists": false,
+   "on_loan": false,
+   "recently_acquired": false,
+   "record_type": "object",
+   "conservation_statement": null,
+   "has_conservation_images": false,
+   "cover_accession_number": null,
+   "is_nazi_era_provenance": false,
+   "impression": null,
+   "alternate_titles": [],
+   "is_highlight": false,
+   "updated_at": "2026-05-29 07:50:09.766000"
+  },
+  {
+   "id": 118982,
+   "accession_number": "1940.1173",
+   "share_license_status": "CC0",
+   "tombstone": "Gothic Church among Oaks, 1810. Karl Friedrich Schinkel (German, 1781–1841). Lithograph with tint stone; sheet: 47.8 x 34.1 cm (18 13/16 x 13 7/16 in.). The Cleveland Museum of Art, Mr. and Mrs. Lewis B. Williams Collection, 1940.1173",
+   "current_location": null,
+   "title": "Gothic Church among Oaks",
+   "creation_date": "1810",
+   "creation_date_earliest": 1810,
+   "creation_date_latest": 1810,
+   "artists_tags": [
+    "male"
+   ],
+   "culture": [
+    "Germany, 19th century"
+   ],
+   "technique": "lithograph with tint stone",
+   "support_materials": [],
+   "department": "Prints",
+   "collection": "PR - Lithograph",
+   "type": "Print",
+   "dimensions": {
+    "sheet": {
+     "height": 0.478,
+     "height_inch": 18,
+     "height_inch_fraction": 0.8125,
+     "width": 0.341,
+     "width_inch": 13,
+     "width_inch_fraction": 0.4375
+    }
+   },
+   "state_of_the_work": null,
+   "edition_of_the_work": null,
+   "copyright": null,
+   "find_spot": null,
+   "former_accession_numbers": [],
+   "did_you_know": null,
+   "early_education_description": null,
+   "artlens_description": null,
+   "external_resources": {
+    "wikidata": [
+     "https://www.wikidata.org/wiki/Q80014134"
+    ],
+    "internet_archive": [
+     "https://archive.org/details/clevelandart-1940.1173-gothic-church-among"
+    ]
+   },
+   "catalogue_raisonne": "Winkler 763.8",
+   "url": "https://clevelandart.org/art/1940.1173",
+   "images": {
+    "annotation": null,
+    "web": {
+     "url": "https://openaccess-cdn.clevelandart.org/1940.1173/1940.1173_web.jpg",
+     "width": "638",
+     "height": "893",
+     "filesize": "566561",
+     "filename": "1940.1173_web.jpg"
+    },
+    "print": {
+     "url": "https://openaccess-cdn.clevelandart.org/1940.1173/1940.1173_print.jpg",
+     "width": "2431",
+     "height": "3400",
+     "filesize": "7658867",
+     "filename": "1940.1173_print.jpg"
+    },
+    "full": {
+     "url": "https://openaccess-cdn.clevelandart.org/1940.1173/1940.1173_full.tif",
+     "width": "3575",
+     "height": "5000",
+     "filesize": "53656524",
+     "filename": "1940.1173_full.tif"
+    }
+   },
+   "creditline": "Mr. and Mrs. Lewis B. Williams Collection",
+   "image_credit": null,
+   "sketchfab_id": null,
+   "sketchfab_url": null,
+   "gallery_donor_text": null,
+   "creators": [
+    {
+     "id": 20185,
+     "description": "Karl Friedrich Schinkel (German, 1781–1841)",
+     "extent": null,
+     "qualifier": null,
+     "role": "artist",
+     "biography": null,
+     "name_in_original_language": null,
+     "birth_year": "1781",
+     "death_year": "1841",
+     "use_in_caption": true,
+     "include_extent": false,
+     "weight": 1
+    }
+   ],
+   "legal_status": "accessioned",
+   "accession_date": "1940-12-30T00:00:00",
+   "sortable_date": 1810,
+   "date_added_to_oa": null,
+   "date_text": "1810",
+   "collapse_artists": false,
+   "on_loan": false,
+   "recently_acquired": false,
+   "record_type": "object",
+   "conservation_statement": null,
+   "has_conservation_images": false,
+   "cover_accession_number": null,
+   "is_nazi_era_provenance": false,
+   "impression": null,
+   "alternate_titles": [
+    "Liebliche Wehmut"
+   ],
+   "is_highlight": false,
+   "updated_at": "2026-05-29 06:09:08.074000"
+  }
+ ]
+}

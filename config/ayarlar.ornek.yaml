@@ -1,0 +1,63 @@
+# ===========================================================================
+#  insta-otomasyon - DAVRANIS AYARLARI (ornek dosya)
+# ---------------------------------------------------------------------------
+#  Bu dosyayi ayni klasore "ayarlar.yaml" adiyla kopyalayin ve duzenleyin.
+#  (Windows PowerShell:  Copy-Item config\ayarlar.ornek.yaml config\ayarlar.yaml )
+#  Token gibi sirlar BURAYA YAZILMAZ; onlar config/.env dosyasindadir.
+#
+#  Bilinmeyen bir anahtar yazarsaniz program acilista Turkce hata verir
+#  (yazim hatasi sessizce varsayilana dusmesin diye bilincli bir karardir).
+# ===========================================================================
+
+# --- Klasorler -------------------------------------------------------------
+# Goreli yollar proje kokune (bu dosyanin bir ust klasoru) goredir.
+klasorler:
+  gelen_reels: gelen/reels      # buraya atilan video Reels olarak yayinlanir
+  gelen_story: gelen/story      # buraya atilan video/gorsel Story olur
+  yayinlandi: yayinlandi        # basarili dosyalar YYYY-MM/ altina tasinir
+  hata: hata                    # basarisiz dosyalar ve loglar
+  veritabani: kuyruk.db         # SQLite kuyruk dosyasi
+
+# --- Zamanlama -------------------------------------------------------------
+zamanlama:
+  zaman_dilimi: "Europe/Istanbul"
+  # Dosya adinda tarih/saat yoksa gorev bu slotlarin ilk uygun olanina konur.
+  # Bicim "SS:DD" (24 saat). Ornek: ["09:00", "12:00", "19:00"]
+  yayin_slotlari:
+    - "12:00"
+    - "19:00"
+  tarama_araligi_sn: 60         # kuyruk kac saniyede bir kontrol edilsin
+  slot_tolerans_dk: 30          # slot kacirilirsa kac dakika icinde hala yayinlansin
+
+# --- Yayin davranisi -------------------------------------------------------
+yayin:
+  # Gunluk KENDI limitiniz. Meta'nin siniri 24 saatlik kayan pencerede
+  # 100 yayindir (bazi dokumanlarda 50); asagidaki deger ondan kucuk olmali.
+  gunluk_limit: 25
+  azami_deneme: 5               # gecici hatada bir gorev kac kez denensin
+  durum_sorgu_araligi_sn: 20    # kapsayici durumu kac saniyede bir sorulsun
+  durum_azami_bekleme_sn: 900   # isleme icin azami bekleme (15 dk)
+  yukleme_zaman_asimi_sn: 900   # rupload yuklemesi icin okuma/yazma zaman asimi
+  istek_zaman_asimi_sn: 60      # normal Graph API cagrilari
+  baglanti_zaman_asimi_sn: 30
+  akisa_paylas: true            # share_to_feed - SADECE Reels icin gecerlidir
+  varsayilan_aciklama: ""       # yaninda .txt yoksa kullanilacak metin
+  kota_sorgula: true            # yayin oncesi content_publishing_limit sorulsun mu
+  hatali_dosyayi_tasi: true     # kalici hatada dosya hata/ klasorune tasinsin mi
+
+# --- Dosya kabul kurallari -------------------------------------------------
+dosya:
+  kararlilik_bekleme_sn: 3.0    # kopyalama bitti mi diye kac saniyede bir bakilsin
+  kararlilik_tekrar: 3          # boyut kac olcumde ayni kalirsa dosya hazir sayilsin
+  video_uzantilari: [".mp4", ".mov"]
+  # PNG/WebP gorseller Pillow ile JPEG'e cevrilir; Meta sadece JPEG kabul eder.
+  gorsel_uzantilari: [".jpg", ".jpeg", ".png", ".webp"]
+  aciklama_uzantisi: ".txt"     # video ile ayni adli .txt dosyasi caption olur
+  yoksayilan_onekler: [".", "~", "_"]   # gecici/yarim dosyalar
+
+# --- Kayit (log) -----------------------------------------------------------
+kayit:
+  seviye: "INFO"                # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  dosya: hata/otomasyon.log
+  azami_bayt: 5242880           # 5 MB dolunca dosya devredilir
+  yedek_sayisi: 5
