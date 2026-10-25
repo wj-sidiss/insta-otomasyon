@@ -10,8 +10,10 @@ atabilir. Bu yuzden:
 """
 from __future__ import annotations
 
+import io
 import threading
 import uuid
+import zipfile
 from pathlib import Path
 from typing import Callable, Literal
 from urllib.parse import urlparse
@@ -19,10 +21,11 @@ from urllib.parse import urlparse
 import httpx
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import FileResponse, JSONResponse, Response
 from pydantic import BaseModel, Field
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
+from . import carousel as carousel_modulu
 from . import stok as stok_modulu
 from .anahtarlar import AnahtarDeposu, AnahtarHatasi
 from .paket import (
@@ -44,6 +47,11 @@ class UretIstegi(BaseModel):
     konu: str = Field(min_length=3, max_length=300)
     dil: Literal["tr", "en"] = "tr"
     ton: Literal["samimi", "uzman", "enerjik", "ciddi"] = "samimi"
+    saglayici: str = Field(default="auto", max_length=40)
+
+
+class CarouselIstegi(BaseModel):
+    adet: int = Field(default=carousel_modulu.VARSAYILAN_SLAYT, ge=carousel_modulu.SLAYT_ASGARI, le=carousel_modulu.SLAYT_AZAMI)
     saglayici: str = Field(default="auto", max_length=40)
 
 
@@ -87,6 +95,7 @@ def uygulama_olustur(
     anahtar_depo: AnahtarDeposu | None = None,
     stok_istemci: httpx.Client | None = None,
     stok_onbellek: Onbellek | None = None,
+    carousel_ciz=carousel_modulu.slaytlari_ciz,
 ) -> FastAPI:
     klasor = Path(paket_klasoru)
     uygulama = FastAPI(title="Icerik Studyosu", docs_url=None, redoc_url=None, openapi_url=None)
@@ -183,6 +192,76 @@ def uygulama_olustur(
                 isler.pop(next(iter(isler)))
         threading.Thread(target=_calistir, args=(is_id, istek), daemon=True).start()
         return {"is_id": is_id}
+
+    def _calistir_carousel(is_id: str, paket: dict, istek: CarouselIstegi) -> None:
+        durum_kaydi = isler[is_id]
+
+        def ilerleme(adim: str, mesaj: str) -> None:
+            durum_kaydi["adimlar"].append({"adim": adim, "mesaj": mesaj})
+
+        try:
+            saglayici = saglayici_bulucu(istek.saglayici)
+            carousel_modulu.carousel_olustur(
+                paket, saglayici=saglayici, klasor=klasor, adet=istek.adet, imza=imza, ciz=carousel_ciz, ilerleme=ilerleme,
+            )
+            durum_kaydi["paket_id"] = paket["id"]
+            durum_kaydi["durum"] = "bitti"
+        except (SaglayiciHatasi, ValueError) as hata:
+            durum_kaydi["hata"] = str(hata)
+            durum_kaydi["durum"] = "hata"
+        except Exception as hata:
+            durum_kaydi["hata"] = f"Beklenmeyen hata: {type(hata).__name__}: {hata}"
+            durum_kaydi["durum"] = "hata"
+
+    @uygulama.post("/api/paket/{paket_id}/carousel", status_code=202)
+    def carousel_uret(paket_id: str, istek: CarouselIstegi):
+        paket = paketi_oku(klasor, paket_id)
+        if paket is None:
+            raise HTTPException(404, "Paket bulunamadı.")
+        with kilit:
+            if any(i["durum"] == "calisiyor" for i in isler.values()):
+                raise HTTPException(409, "Bir üretim zaten sürüyor, bitmesini bekleyin.")
+            is_id = uuid.uuid4().hex[:12]
+            isler[is_id] = {"durum": "calisiyor", "adimlar": [], "paket_id": None, "hata": None, "tur": "carousel"}
+            while len(isler) > IS_SAKLAMA_SINIRI:
+                isler.pop(next(iter(isler)))
+        threading.Thread(target=_calistir_carousel, args=(is_id, paket, istek), daemon=True).start()
+        return {"is_id": is_id}
+
+    @uygulama.get("/api/paket/{paket_id}/carousel")
+    def carousel_getir(paket_id: str):
+        sonuc = carousel_modulu.carousel_oku(klasor, paket_id)
+        if sonuc is None:
+            raise HTTPException(404, "Bu paket için carousel yok.")
+        return sonuc
+
+    @uygulama.get("/paketler/{paket_id}/carousel/{dosya}")
+    def carousel_slayt(paket_id: str, dosya: str):
+        if not gecerli_id_mi(paket_id) or not carousel_modulu.SLAYT_DOSYA_DESENI.fullmatch(dosya):
+            raise HTTPException(404, "Dosya bulunamadı.")
+        yol = klasor / paket_id / "carousel" / dosya
+        if not yol.is_file():
+            raise HTTPException(404, "Dosya bulunamadı.")
+        return FileResponse(yol, media_type="image/jpeg", content_disposition_type="inline")
+
+    @uygulama.get("/paketler/{paket_id}/carousel.zip")
+    def carousel_zip(paket_id: str):
+        sonuc = carousel_modulu.carousel_oku(klasor, paket_id)
+        if sonuc is None or not sonuc.get("dosyalar"):
+            raise HTTPException(404, "İndirilecek carousel yok.")
+        tampon = io.BytesIO()
+        with zipfile.ZipFile(tampon, "w", zipfile.ZIP_DEFLATED) as z:
+            for ad in sonuc["dosyalar"]:
+                yol = klasor / paket_id / "carousel" / ad
+                if carousel_modulu.SLAYT_DOSYA_DESENI.fullmatch(ad) and yol.is_file():
+                    z.write(yol, ad)
+            paket = paketi_oku(klasor, paket_id) or {}
+            etiketler = " ".join(h["etiket"] for h in paket.get("hashtagler", [])[:10])
+            z.writestr("aciklama.txt", sonuc["caption"] + (f"\n\n{etiketler}" if etiketler else "") + "\n")
+        return Response(
+            tampon.getvalue(), media_type="application/zip",
+            headers={"Content-Disposition": f'attachment; filename="carousel-{paket_id}.zip"'},
+        )
 
     @uygulama.get("/api/is/{is_id}")
     def is_durumu(is_id: str):

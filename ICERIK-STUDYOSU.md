@@ -106,6 +106,14 @@ Wikimedia, User-Agent'ta **iletişim bilgisi (URL/e-posta)** olmayan istekleri 4
 **kütüphane adı** geçerse 403 verir ve görsel sunucusu da `AIC-User-Agent` başlığını ister; The Met'in eski `v1/search` ucu kapandı (`v1.1`); Cleveland boyutları metin olarak verir.
 Varsayılan iletişim adresi proje depodur; kendi adresinizi `IC_ILETISIM` ortam değişkeniyle verebilirsiniz.
 
+## Carousel (kaydırmalı gönderi)
+
+Paket kartındaki **"Carousel üret"** bloğu aynı konudan 4-10 slaytlık bir gönderi yazar ve çizer (1080×1350, 4:5; Instagram API'si en fazla 10 görsel kabul eder).
+İlk slayt her zaman kapak, son slayt her zaman kapanış (kaydet/paylaş çağrısı) olur; model fazla slayt yazarsa ortadakiler atılır, gerçek kapanış korunur.
+Çıktı `paketler/<paket>/carousel/` altına düşer (`slayt-01.jpg` …, `carousel.json`) ve **tek .zip** olarak (slaytlar + caption + ilk 10 hashtag) indirilir.
+Slayt metinleri model çıktısıdır: HTML'e basılmadan önce kaçırılır, uydurma sayı/vaat/emoji yasağı istemde vardır.
+**Denenmedi:** carousel'in Instagram'a API ile yayımlanması (görsellerin herkese açık bir adres olması gerekebilir); şimdilik zip'i elle yüklersiniz.
+
 ## Panel sertleştirmesi
 
 Betik ve stil ayrı dosyalardır (`panel.js`, `panel.css`); CSP'de `script-src 'self'` ve `style-src 'self'` vardır, **`'unsafe-inline'` yoktur**: bir yerde HTML

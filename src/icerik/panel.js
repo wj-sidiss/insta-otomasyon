@@ -154,6 +154,8 @@ function paketCiz(p) {
     const atifKap = el('div'); atifKap.id = 'atifKap'; kok.append(atifKap, bSen.b); atifGuncelle();
   }
 
+  kok.append(carouselBlogu(p));
+
   if (p.trendler.length) {
     const tr = el('div', 'etiketler');
     p.trendler.forEach(t => { const e = el('span', 'etiket', t.kelime); e.title = t.kaynaklar.join(' + '); tr.append(e); });
@@ -342,6 +344,51 @@ function sahneMedya(p, sahne, no) {
   if (sahne.gorsel_istemi) satir.append(kopyalaDugmesi(() => sahne.gorsel_istemi, 'AI istemi'));
   kap.append(satir, mesaj, sonuc, secili);
   return kap;
+}
+
+function carouselBlogu(p) {
+  const sec = el('select'); [10, 8, 7, 6, 5, 4].forEach(n => { const o = el('option', null, n + ' slayt'); o.value = String(n); sec.append(o); });
+  const dugme = el('button', 'kucuk', p.carousel ? 'Yeniden üret' : 'Carousel üret');
+  const durum = el('div', 'not'); const icerik = el('div');
+  const kontrol = el('div', 'carousel-kontrol'); kontrol.append(sec, dugme);
+  const bl = blok('Carousel · kaydırmalı gönderi',
+    el('div', 'not', "Aynı paketten 4-10 slaytlık bir gönderi üretir (1080×1350, 4:5). Instagram API'si carousel için en fazla 10 görsel kabul eder."), kontrol, durum, icerik);
+
+  const goster = async () => {
+    icerik.replaceChildren();
+    let c;
+    try { c = await api('/api/paket/' + p.id + '/carousel'); } catch (_) { return; }
+    c.uyarilar.forEach(u => icerik.append(el('div', 'uyari', u)));
+    if (c.dosyalar.length) {
+      const izgara = el('div', 'carousel-izgara');
+      c.dosyalar.forEach((ad, i) => {
+        const a = el('a'); a.href = '/paketler/' + p.id + '/carousel/' + encodeURIComponent(ad); a.target = '_blank'; a.rel = 'noopener noreferrer';
+        const img = el('img'); img.src = a.href; img.alt = (c.alt_metinler && c.alt_metinler[i]) || ('Slayt ' + (i + 1)); img.loading = 'lazy'; a.append(img); izgara.append(a);
+      });
+      const islem = el('div', 'carousel-kontrol');
+      const z = el('a'); z.href = '/paketler/' + p.id + '/carousel.zip'; z.append(el('button', 'kucuk', 'Tümünü indir (.zip)'));
+      islem.append(z, kopyalaDugmesi(() => c.caption, 'Caption\'ı kopyala'));
+      icerik.append(izgara, islem);
+    }
+    icerik.append(el('div', 'metin', c.caption));
+  };
+
+  dugme.onclick = async () => {
+    dugme.disabled = true; durum.textContent = 'Başlatılıyor…';
+    try {
+      const { is_id } = await api('/api/paket/' + p.id + '/carousel', { method: 'POST', body: JSON.stringify({ adet: Number(sec.value), saglayici: $('#motor').value }) });
+      for (;;) {
+        await new Promise(r => setTimeout(r, 800));
+        const d = await api('/api/is/' + is_id);
+        const son = d.adimlar[d.adimlar.length - 1]; if (son) durum.textContent = son.mesaj;
+        if (d.durum === 'bitti') { p.carousel = p.carousel || {}; await goster(); durum.replaceChildren(); dugme.textContent = 'Yeniden üret'; break; }
+        if (d.durum === 'hata') { durum.textContent = d.hata || 'Bilinmeyen hata.'; break; }
+      }
+    } catch (h) { durum.textContent = h.message; }
+    dugme.disabled = false;
+  };
+  if (p.carousel) goster();
+  return bl.b;
 }
 
 $('#uret').onclick = uret;

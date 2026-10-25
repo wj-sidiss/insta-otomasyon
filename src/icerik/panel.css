@@ -95,5 +95,10 @@ a{color:#A5B4FC}
 .aday small{display:block;padding:5px 7px;font-size:11px;color:var(--sonuk);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .aday small.lisans{white-space:normal;line-height:1.25}
 .aday .uyari-lisans{color:var(--sari)}
+.carousel-izgara{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px;margin-top:12px}
+.carousel-izgara a{display:block}
+.carousel-izgara img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;border:1px solid var(--cizgi);background:#000;display:block}
+.carousel-kontrol{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}
+.carousel-kontrol select{width:auto;padding:7px 10px;font-size:13px}
 .secili-medya{display:flex;gap:12px;align-items:flex-start;margin-top:10px}
 .secili-medya img,.secili-medya video{width:96px;aspect-ratio:9/16;object-fit:cover;border-radius:10px;background:#000;flex:none}
