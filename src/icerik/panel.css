@@ -95,6 +95,7 @@ a{color:#A5B4FC}
 .aday small{display:block;padding:5px 7px;font-size:11px;color:var(--sonuk);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .aday small.lisans{white-space:normal;line-height:1.25}
 .aday .uyari-lisans{color:var(--sari)}
+.video-onizleme{display:block;width:100%;max-width:260px;aspect-ratio:9/16;border-radius:14px;border:1px solid var(--cizgi);background:#000;margin-top:12px}
 .carousel-izgara{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px;margin-top:12px}
 .carousel-izgara a{display:block}
 .carousel-izgara img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;border:1px solid var(--cizgi);background:#000;display:block}

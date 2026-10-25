@@ -114,6 +114,19 @@ Paket kartındaki **"Carousel üret"** bloğu aynı konudan 4-10 slaytlık bir g
 Slayt metinleri model çıktısıdır: HTML'e basılmadan önce kaçırılır, uydurma sayı/vaat/emoji yasağı istemde vardır.
 **Denenmedi:** carousel'in Instagram'a API ile yayımlanması (görsellerin herkese açık bir adres olması gerekebilir); şimdilik zip'i elle yüklersiniz.
 
+## Reels videosu (otomatik birleştirme)
+
+Paket kartındaki **"Videoyu birleştir"** bloğu senaryoyu 1080×1920 (9:16) mp4'e çevirir: her sahne için sesli anlatım, sahneye seçtiğin stok görsel/video
+(görsel yavaşça yakınlaşır, video dikeye kırpılıp döngülenir) ve üstüne ekran yazısı; sahneler birleştirilip ses seviyesi normalize edilir (loudnorm −16 LUFS).
+Medya seçilmemiş sahneler ekran yazısını taşıyan düz karta dönüşür, böylece video her durumda çıkar; uyarıda hangi sahnelerin kart olduğu yazar.
+Çıktı `paketler/<paket>/video/reels.mp4`. Süre anlatımın uzunluğundan gelir (sahne başına 2-20 sn); 90 sn üstü uyarı verir.
+
+- **Gereken:** `ffmpeg` + `ffprobe` (yoksa panel kurulum komutunu söyler), Playwright/Chromium (yazı katmanı için), sesli anlatım için `pip install edge-tts`.
+- **Gizlilik:** Sesli anlatım, anlatım metnini edge-tts üzerinden Microsoft'un okuma servisine gönderir (anahtarsız, **resmî olmayan** bir servis; bir gün çalışmayabilir). "Sessiz" seçersen hiçbir şey gönderilmez.
+  Ses gelmezse sahne sessiz devam eder ve uyarı verir; Emel sesi gelmezse Ahmet denenir.
+- **Denendi (2026-10-26):** 7 sahne, 61 sn, h264+aac, gerçek Türkçe ses, tarayıcıda oynatma. **Denenmedi:** gerçek Pexels/Pixabay videosuyla birleştirme (anahtar yok; test klipleriyle denendi), Instagram'a yükleme, GPU kodlayıcılar (yalnızca libx264).
+- **Yok (henüz):** kelime kelime altyazı, arka plan müziği, sahneler arası geçiş. Ekran yazısı sahne boyunca sabit durur.
+
 ## Panel sertleştirmesi
 
 Betik ve stil ayrı dosyalardır (`panel.js`, `panel.css`); CSP'de `script-src 'self'` ve `style-src 'self'` vardır, **`'unsafe-inline'` yoktur**: bir yerde HTML
@@ -122,4 +135,4 @@ Bu koruma ve SSRF tablosu, aynı sahibin Otopilot projesinden (MIT) tasındı.
 
 ## Henüz yok
 
-Videonun kendisini birleştirmek (senaryo + ses + stok görüntü + altyazı, M2'nin geri kalanı), Instagram bağlantısı ve paylaşım (M3), MCP sunucusu (M4). Ayrıntı: [URUN-PLANI.md](URUN-PLANI.md).
+Kelime kelime altyazı ve müzik, Instagram bağlantısı ve paylaşım (M3), MCP sunucusu (M4). Ayrıntı: [URUN-PLANI.md](URUN-PLANI.md).

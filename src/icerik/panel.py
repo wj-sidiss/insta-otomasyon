@@ -26,6 +26,7 @@ from pydantic import BaseModel, Field
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
 from . import carousel as carousel_modulu
+from . import video as video_modulu
 from . import stok as stok_modulu
 from .anahtarlar import AnahtarDeposu, AnahtarHatasi
 from .paket import (
@@ -53,6 +54,10 @@ class UretIstegi(BaseModel):
 class CarouselIstegi(BaseModel):
     adet: int = Field(default=carousel_modulu.VARSAYILAN_SLAYT, ge=carousel_modulu.SLAYT_ASGARI, le=carousel_modulu.SLAYT_AZAMI)
     saglayici: str = Field(default="auto", max_length=40)
+
+
+class VideoIstegi(BaseModel):
+    ses: str = Field(default=video_modulu.VARSAYILAN_SES, max_length=40)
 
 
 class StokIstegi(BaseModel):
@@ -96,6 +101,8 @@ def uygulama_olustur(
     stok_istemci: httpx.Client | None = None,
     stok_onbellek: Onbellek | None = None,
     carousel_ciz=carousel_modulu.slaytlari_ciz,
+    video_seslendir=video_modulu.edge_tts_ile_seslendir,
+    video_gorsel_ciz=video_modulu.gorselleri_ciz,
 ) -> FastAPI:
     klasor = Path(paket_klasoru)
     uygulama = FastAPI(title="Icerik Studyosu", docs_url=None, redoc_url=None, openapi_url=None)
@@ -262,6 +269,59 @@ def uygulama_olustur(
             tampon.getvalue(), media_type="application/zip",
             headers={"Content-Disposition": f'attachment; filename="carousel-{paket_id}.zip"'},
         )
+
+    def _calistir_video(is_id: str, paket: dict, istek: VideoIstegi) -> None:
+        durum_kaydi = isler[is_id]
+
+        def ilerleme(adim: str, mesaj: str) -> None:
+            durum_kaydi["adimlar"].append({"adim": adim, "mesaj": mesaj})
+
+        try:
+            video_modulu.video_olustur(
+                paket, klasor=klasor, ses=istek.ses, imza=imza, seslendir=video_seslendir, ciz=video_gorsel_ciz, ilerleme=ilerleme,
+            )
+            durum_kaydi["paket_id"] = paket["id"]
+            durum_kaydi["durum"] = "bitti"
+        except (video_modulu.VideoHatasi, ValueError) as hata:
+            durum_kaydi["hata"] = str(hata)
+            durum_kaydi["durum"] = "hata"
+        except Exception as hata:
+            durum_kaydi["hata"] = f"Beklenmeyen hata: {type(hata).__name__}: {hata}"
+            durum_kaydi["durum"] = "hata"
+
+    @uygulama.get("/api/sesler")
+    def sesler():
+        return {"sesler": [{"ad": ad, "etiket": etiket} for ad, etiket in video_modulu.SESLER.items()], "varsayilan": video_modulu.VARSAYILAN_SES}
+
+    @uygulama.post("/api/paket/{paket_id}/video", status_code=202)
+    def video_uret(paket_id: str, istek: VideoIstegi):
+        if istek.ses not in video_modulu.SESLER:
+            raise HTTPException(422, "Geçersiz ses.")
+        paket = paketi_oku(klasor, paket_id)
+        if paket is None:
+            raise HTTPException(404, "Paket bulunamadı.")
+        with kilit:
+            if any(i["durum"] == "calisiyor" for i in isler.values()):
+                raise HTTPException(409, "Bir üretim zaten sürüyor, bitmesini bekleyin.")
+            is_id = uuid.uuid4().hex[:12]
+            isler[is_id] = {"durum": "calisiyor", "adimlar": [], "paket_id": None, "hata": None, "tur": "video"}
+            while len(isler) > IS_SAKLAMA_SINIRI:
+                isler.pop(next(iter(isler)))
+        threading.Thread(target=_calistir_video, args=(is_id, paket, istek), daemon=True).start()
+        return {"is_id": is_id}
+
+    @uygulama.get("/api/paket/{paket_id}/video")
+    def video_getir(paket_id: str):
+        sonuc = video_modulu.video_oku(klasor, paket_id)
+        if sonuc is None:
+            raise HTTPException(404, "Bu paket için video yok.")
+        return sonuc
+
+    @uygulama.get("/paketler/{paket_id}/video/reels.mp4")
+    def video_dosyasi(paket_id: str):
+        if video_modulu.video_oku(klasor, paket_id) is None:
+            raise HTTPException(404, "Dosya bulunamadı.")
+        return FileResponse(klasor / paket_id / "video" / video_modulu.VIDEO_DOSYASI, media_type="video/mp4", content_disposition_type="inline")
 
     @uygulama.get("/api/is/{is_id}")
     def is_durumu(is_id: str):

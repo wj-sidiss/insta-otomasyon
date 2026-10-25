@@ -155,6 +155,7 @@ function paketCiz(p) {
   }
 
   kok.append(carouselBlogu(p));
+  kok.append(videoBlogu(p));
 
   if (p.trendler.length) {
     const tr = el('div', 'etiketler');
@@ -344,6 +345,46 @@ function sahneMedya(p, sahne, no) {
   if (sahne.gorsel_istemi) satir.append(kopyalaDugmesi(() => sahne.gorsel_istemi, 'AI istemi'));
   kap.append(satir, mesaj, sonuc, secili);
   return kap;
+}
+
+function videoBlogu(p) {
+  const sec = el('select'); const dugme = el('button', 'kucuk', p.video ? 'Yeniden üret' : 'Videoyu birleştir');
+  const durum = el('div', 'not'); const icerik = el('div');
+  const kontrol = el('div', 'carousel-kontrol'); kontrol.append(sec, dugme);
+  const bl = blok('Reels videosu · otomatik birleştirme',
+    el('div', 'not', "Senaryo + sesli anlatım + sahnelere seçtiğin medya + ekran yazısı → 1080×1920 (9:16) mp4. Medya seçilmemiş sahneler düz kart olur. Sesli anlatım, anlatım metnini Microsoft'un okuma servisine (edge-tts) gönderir; \"Sessiz\" seçersen hiçbir şey gönderilmez."),
+    kontrol, durum, icerik);
+  api('/api/sesler').then(d => d.sesler.forEach(s => { const o = el('option', null, s.etiket); o.value = s.ad; if (s.ad === d.varsayilan) o.selected = true; sec.append(o); })).catch(() => {});
+
+  const goster = async () => {
+    icerik.replaceChildren();
+    let v;
+    try { v = await api('/api/paket/' + p.id + '/video'); } catch (_) { return; }
+    v.uyarilar.forEach(u => icerik.append(el('div', 'uyari', u)));
+    const yol = '/paketler/' + p.id + '/video/reels.mp4?v=' + encodeURIComponent(v.olusturma);
+    const vid = el('video', 'video-onizleme'); vid.controls = true; vid.preload = 'metadata'; vid.src = yol;
+    const islem = el('div', 'carousel-kontrol');
+    const a = el('a'); a.href = yol; a.download = 'reels-' + p.id + '.mp4'; a.append(el('button', 'kucuk', 'mp4 indir'));
+    islem.append(a, el('span', 'not', v.sure_sn + ' sn · ' + v.sahne_sayisi + ' sahne · ' + v.medyali_sahne + ' sahnede medya'));
+    icerik.append(vid, islem);
+  };
+
+  dugme.onclick = async () => {
+    dugme.disabled = true; durum.textContent = 'Başlatılıyor…';
+    try {
+      const { is_id } = await api('/api/paket/' + p.id + '/video', { method: 'POST', body: JSON.stringify({ ses: sec.value }) });
+      for (;;) {
+        await new Promise(r => setTimeout(r, 1000));
+        const d = await api('/api/is/' + is_id);
+        const son = d.adimlar[d.adimlar.length - 1]; if (son) durum.textContent = son.mesaj;
+        if (d.durum === 'bitti') { await goster(); durum.replaceChildren(); dugme.textContent = 'Yeniden üret'; break; }
+        if (d.durum === 'hata') { durum.textContent = d.hata || 'Bilinmeyen hata.'; break; }
+      }
+    } catch (h) { durum.textContent = h.message; }
+    dugme.disabled = false;
+  };
+  if (p.video) goster();
+  return bl.b;
 }
 
 function carouselBlogu(p) {
